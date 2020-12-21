@@ -1,13 +1,14 @@
 version: '3'
 services:
   strapi:
+    container_name: strapi
     image: strapi/strapi
     volumes:
       - ./strapi:/usr/src/strapi
     ports:
       - '1337:1337'
   frontend:
-    container_name: frontend
+    container_name: reactapp
     build: ./frontend
     depends_on:
       - strapi
