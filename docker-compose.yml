@@ -9,6 +9,8 @@ services:
   frontend:
     container_name: frontend
     build: ./frontend
+    depends_on:
+      - strapi
     volumes:
       - './frontend:/usr/src/frontend'
       - '/frontend/node_modules'
